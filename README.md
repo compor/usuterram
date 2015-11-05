@@ -1,5 +1,5 @@
 
 ### Usuterram
 
-usu terram stand for practice ground in Latin
+usu terram stands for practice ground in Latin
 
