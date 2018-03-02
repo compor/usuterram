@@ -1,6 +1,8 @@
 # algorithm 7.14
 # DAG dominance calculation
 
+from predecessors import predecessors
+
 graph = {
     'entry': {'b1'},
     'b1': {'b2', 'b3'},
@@ -12,18 +14,6 @@ graph = {
     'exit': {}
 }
 
-
-def predecessors(graph):
-    preds = {}
-
-    for k in graph.iterkeys():
-        preds[k] = set()
-
-    for k, v in graph.iteritems():
-        for n in v:
-            preds[n] |= {k}
-
-    return preds
 
 
 # this encapsulates the following textual description:
