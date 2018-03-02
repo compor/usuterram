@@ -23,5 +23,38 @@ def predecessors(graph):
         for n in v:
             preds[n] |= {k}
 
-    print preds
+    return preds
 
+
+def dom_comp(graph, root):
+    nodes = set()
+    dominators = {}
+    preds = predecessors(graph)
+
+    for k in graph.iterkeys():
+        dominators[k] = {}
+        nodes.add(k)
+
+    for k in graph.iterkeys():
+        dominators[k] = nodes
+
+    dominators[root] = {root}
+
+    changed = True
+    while changed:
+        changed = False
+        for n in nodes - {root}:
+            t = nodes.copy()
+            for p in preds[n]:
+                t &= dominators[p]
+            d = {n} | t
+            t = d ^ dominators[n]
+            if len(t):
+                changed = True
+                dominators[n] = d
+
+    return dominators
+
+
+predecessors(graph)
+dom_comp(graph, 'entry')
