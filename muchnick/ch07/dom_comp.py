@@ -1,20 +1,8 @@
 # algorithm 7.14
 # DAG dominance calculation
+#
 
 from predecessors import predecessors
-
-graph = {
-    'entry': {'b1'},
-    'b1': {'b2', 'b3'},
-    'b2': {'exit'},
-    'b3': {'b4'},
-    'b4': {'b5', 'b6'},
-    'b5': {'exit'},
-    'b6': {'b4'},
-    'exit': {}
-}
-
-
 
 # this encapsulates the following textual description:
 # 1. node A dominates itself, or
@@ -51,7 +39,3 @@ def dom_comp(graph, root):
                 dominators[n] = d
 
     return dominators
-
-
-predecessors(graph)
-dom_comp(graph, 'entry')
