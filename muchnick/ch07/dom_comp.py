@@ -26,6 +26,13 @@ def predecessors(graph):
     return preds
 
 
+# this encapsulates the following textual description:
+# 1. node A dominates itself, or
+# 2. node A has a single immediate predecessor, then it is dominated by it, or
+# 3. node A has multiple immediate predecessors, then find the common
+#    dominators of its predecessors, those will dominate it
+
+
 def dom_comp(graph, root):
     nodes = set()
     dominators = {}
