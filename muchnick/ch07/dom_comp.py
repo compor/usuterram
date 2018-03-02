@@ -29,13 +29,13 @@ def dom_comp(graph, root):
     while changed:
         changed = False
         for n in nodes - {root}:
-            t = nodes.copy()
+            newDominators = nodes.copy()
             for p in preds[n]:
-                t &= dominators[p]
-            d = {n} | t
-            t = d ^ dominators[n]
-            if len(t):
+                newDominators &= dominators[p]
+            newDominators |= {n}
+
+            if len(newDominators ^ dominators[n]):
                 changed = True
-                dominators[n] = d
+                dominators[n] = newDominators
 
     return dominators
