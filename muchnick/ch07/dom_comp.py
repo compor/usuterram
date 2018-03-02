@@ -16,11 +16,11 @@ def dom_comp(graph, root):
     dominators = {}
     preds = predecessors(graph)
 
-    for k in graph.iterkeys():
+    for k in graph.keys():
         dominators[k] = {}
         nodes.add(k)
 
-    for k in graph.iterkeys():
+    for k in graph.keys():
         dominators[k] = nodes
 
     dominators[root] = {root}
