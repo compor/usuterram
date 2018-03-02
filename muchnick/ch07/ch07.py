@@ -10,7 +10,7 @@ def print_dictmap(dictmap, title=''):
     print('{0}'.format(title))
 
     for k, v in dictmap.items():
-        line = '{0:5} -> '.format(k)
+        line = '{0:5} -> '.format(str(k))
         line += ', '.join(str(e) for e in v)
         print(line)
 
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     p = predecessors(g1)
     print_dictmap(p, title='predecessors')
 
-    print
+    print('')
 
     d = dom_comp(g1, 'entry')
     print_dictmap(d, title='dominators')
