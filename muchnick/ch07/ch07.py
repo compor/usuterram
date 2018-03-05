@@ -6,7 +6,7 @@ from predecessors import predecessors
 from dom_comp import dom_comp
 from idom_comp import idom_comp
 from postdominators import postdominators
-from reverse import reverse
+from reverse_graph import reverse_graph
 from utilities import print_graph
 
 if __name__ == "__main__":
@@ -44,7 +44,7 @@ if __name__ == "__main__":
         'stop': {}
     }
 
-    rg2 = reverse(g2)
+    rg2 = reverse_graph(g2)
     print_graph(rg2, '\nreverse graph')
 
     pd2 = postdominators(g2, 'stop')

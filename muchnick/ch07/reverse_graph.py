@@ -1,4 +1,4 @@
-def reverse(graph):
+def reverse_graph(graph):
     rgraph = {}
 
     for k in graph.keys():
