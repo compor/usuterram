@@ -4,6 +4,7 @@
 
 from predecessors import predecessors
 from dom_comp import dom_comp
+from idom_comp import idom_comp
 
 
 def print_dictmap(dictmap, title=''):
@@ -28,9 +29,8 @@ if __name__ == "__main__":
     }
 
     p = predecessors(g1)
-    print_dictmap(p, title='predecessors')
-
-    print('')
+    print_dictmap(p, title='\npredecessors')
 
     d = dom_comp(g1, 'entry')
-    print_dictmap(d, title='dominators')
+    print_dictmap(d, title='\ndominators')
+
