@@ -6,16 +6,7 @@ from predecessors import predecessors
 from dom_comp import dom_comp
 from idom_comp import idom_comp
 from postdominators import postdominators
-
-
-def print_graph(dictmap, title=''):
-    print('{0}'.format(title))
-
-    for k, v in dictmap.items():
-        line = '{0:5} -> '.format(str(k))
-        line += ', '.join(str(e) for e in v)
-        print(line)
-
+from utilities import print_graph
 
 if __name__ == "__main__":
     # this graph is from muchnick ch07
