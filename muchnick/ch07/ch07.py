@@ -34,3 +34,5 @@ if __name__ == "__main__":
     d = dom_comp(g1, 'entry')
     print_dictmap(d, title='\ndominators')
 
+    idom = idom_comp(g1, 'entry')
+    print_dictmap(idom, title='\nimmediate dominators')
