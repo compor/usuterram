@@ -5,7 +5,7 @@
 from predecessors import predecessors
 from dom_comp import dom_comp
 from idom_comp import idom_comp
-from reverse import reverse
+from postdominators import postdominators
 
 
 def print_dictmap(dictmap, title=''):
@@ -52,8 +52,5 @@ if __name__ == "__main__":
         'stop': {}
     }
 
-    rg2 = reverse(g2)
-    print_dictmap(rg2, '\nreverse graph')
-
-    pd2 = dom_comp(rg2, 'stop')
+    pd2 = postdominators(g2, 'stop')
     print_dictmap(pd2, '\npost-dominators')
