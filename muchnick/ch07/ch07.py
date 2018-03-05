@@ -8,7 +8,7 @@ from idom_comp import idom_comp
 from postdominators import postdominators
 
 
-def print_dictmap(dictmap, title=''):
+def print_graph(dictmap, title=''):
     print('{0}'.format(title))
 
     for k, v in dictmap.items():
@@ -31,13 +31,13 @@ if __name__ == "__main__":
     }
 
     p = predecessors(g1)
-    print_dictmap(p, title='\npredecessors')
+    print_graph(p, title='\npredecessors')
 
     d = dom_comp(g1, 'entry')
-    print_dictmap(d, title='\ndominators')
+    print_graph(d, title='\ndominators')
 
     idom = idom_comp(g1, 'entry')
-    print_dictmap(idom, title='\nimmediate dominators')
+    print_graph(idom, title='\nimmediate dominators')
 
     # this graph is from ferrante1987
     g2 = {
@@ -53,4 +53,4 @@ if __name__ == "__main__":
     }
 
     pd2 = postdominators(g2, 'stop')
-    print_dictmap(pd2, '\npost-dominators')
+    print_graph(pd2, '\npost-dominators')
